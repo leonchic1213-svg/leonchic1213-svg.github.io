@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Железный человек - Актерский состав</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Дополнительные стили для страницы актеров */
+        .actor {
+            border-bottom: 2px solid #eaeaea;
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+        
+        .actor:last-child {
+            border-bottom: none;
+        }
+        
+        .actor img {
+            border-radius: 8px;
+            margin-right: 20px;
+            float: left;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .actor-info {
+            overflow: hidden; /* Для обтекания floated изображения */
+        }
+        
+        .actor h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О фильме</a></li>
+                <li><a href="cast.html">Актеры</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Галерея</h1>
+        
+        <div class="actor clearfix">
+            <img src="images/poster1.jpg" alt="Роберт Дауни — младший" width="800">
+                    </div>
+
+        <div class="actor clearfix">
+            <img src="images/poster2.jpg" alt="Терренс Ховард" width="800">
+                   </div>
+
+        <div class="actor clearfix">
+            <img src="images/poster3.jpg" alt="Джефф Бриджес" width="800">
+                  </div>
+
+        <div class="actor clearfix">
+            <img src="images/poster4.jpg" alt="Гвинет Пэлтроу" width="800">
+                  </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Фанатский сайт о "Железный человек". Все права на фильм принадлежат Marvel Studios.</p>
+    </footer>
+
+</body>
+</html>
