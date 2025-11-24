@@ -5,41 +5,43 @@
     <title>Железный человек - Галерея</title>
     <link rel="stylesheet" href="style.css">
     <style>
-                .actor {
-            border-bottom: 2px solid #eaeaea;
-            padding: 20px 0;
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
             margin: 20px 0;
         }
         
-        .actor:last-child {
-            border-bottom: none;
+        .gallery-item {
+            text-align: center;
+            width: 100%;
         }
         
-        .actor img {
-            border-radius: 8px;
-            margin-right: 20px;
-            float: left;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        .gallery-item img {
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            max-width: 100%;
+            height: auto;
+            border: 2px solid var(--card-border);
+            transition: all 0.3s ease;
         }
         
-        .actor-info {
-            overflow: hidden; /* Для обтекания floated изображения */
+        .gallery-item img:hover {
+            border-color: var(--accent-red);
+            transform: scale(1.02);
         }
         
-        .actor h2 {
-            color: #2c3e50;
-            margin-top: 0;
+        .centered-text {
+            text-align: center;
         }
         
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
+        .centered-text h1 {
+            color: var(--marvel-gold);
         }
     </style>
 </head>
 <body>
-
     <header>
         <nav>
             <ul class="menu">
@@ -52,28 +54,34 @@
     </header>
 
     <main>
-        <h1>Галерея</h1>
-        
-        <div class="actor clearfix">
-            <img src="images/poster1.jpg" alt="Роберт Дауни — младший" width="800">
-                    </div>
+        <div class="content-card">
+            <div class="centered-text">
+                <h1>Галерея</h1>
+                <p>Здесь вы можете увидеть различные постеры и кадры из фильма "Железный человек"</p>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="images/poster1.jpg" alt="Постер Железный человек 1" width="800">
+                </div>
 
-        <div class="actor clearfix">
-            <img src="images/poster2.jpg" alt="Терренс Ховард" width="800">
-                   </div>
+                <div class="gallery-item">
+                    <img src="images/poster2.jpg" alt="Постер Железный человек 2" width="800">
+                </div>
 
-        <div class="actor clearfix">
-            <img src="images/poster3.jpg" alt="Джефф Бриджес" width="800">
-                  </div>
+                <div class="gallery-item">
+                    <img src="images/poster3.jpg" alt="Постер Железный человек 3" width="800">
+                </div>
 
-        <div class="actor clearfix">
-            <img src="images/poster4.jpg" alt="Гвинет Пэлтроу" width="800">
-                  </div>
+                <div class="gallery-item">
+                    <img src="images/poster4.jpg" alt="Постер Железный человек 4" width="800">
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>© 2025 Фанатский сайт о "Железный человек". Все права на фильм принадлежат Marvel Studios.</p>
     </footer>
-
 </body>
 </html>

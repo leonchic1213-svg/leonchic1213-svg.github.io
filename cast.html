@@ -5,42 +5,86 @@
     <title>Железный человек - Актерский состав</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Дополнительные стили для страницы актеров */
-        .actor {
-            border-bottom: 2px solid #eaeaea;
-            padding: 20px 0;
-            margin: 20px 0;
+        .actor-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border: 2px solid var(--card-border);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
         }
         
-        .actor:last-child {
-            border-bottom: none;
+        .actor-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-red);
         }
         
-        .actor img {
-            border-radius: 8px;
-            margin-right: 20px;
-            float: left;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        .actor-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+        
+        .actor-photo {
+            flex-shrink: 0;
+        }
+        
+        .actor-photo img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            border: 2px solid var(--card-border);
+            transition: all 0.3s ease;
+        }
+        
+        .actor-card:hover .actor-photo img {
+            border-color: var(--accent-red);
         }
         
         .actor-info {
-            overflow: hidden; /* Для обтекания floated изображения */
+            flex: 1;
         }
         
-        .actor h2 {
-            color: #2c3e50;
+        .actor-info h2 {
+            color: var(--marvel-gold);
             margin-top: 0;
+            margin-bottom: 1rem;
         }
         
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
+        .actor-role {
+            color: var(--accent-red);
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .actor-details {
+            color: #bdc3c7;
+            margin-bottom: 1rem;
+        }
+        
+        .actor-bio {
+            color: #ecf0f1;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .actor-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .actor-photo img {
+                width: 150px;
+                height: 200px;
+            }
         }
     </style>
 </head>
 <body>
-
     <header>
         <nav>
             <ul class="menu">
@@ -53,47 +97,71 @@
     </header>
 
     <main>
-        <h1>Актерский состав</h1>
-        
-        <div class="actor clearfix">
-            <img src="images/robert.jpg" alt="Роберт Дауни — младший" width="200">
-            <div class="actor-info">
-                <h2>Роберт Дауни — младший</h2>
-                <p><strong>Роль:</strong> Тони Старк / Железный человек</p>
-                <p><strong>Дата рождения:</strong> 4 апреля 1965 года</p>
-                <p>Американский актёр, продюсер и музыкант. Обладатель премий «Оскар» (2024), «Золотой глобус» (2001, 2010, 2024), BAFTA (1993, 2024), Гильдии киноактёров США (2001, 2024), «Сатурн» (1994, 2009, 2014, 2019) и Выбор критиков (2024).
-                </p>
+        <div class="content-card">
+            <h1 style="text-align: center;">Актерский состав</h1>
+            
+            <div class="actor-card">
+                <div class="actor-content">
+                    <div class="actor-photo">
+                        <img src="images/robert.jpg" alt="Роберт Дауни — младший">
+                    </div>
+                    <div class="actor-info">
+                        <h2>Роберт Дауни — младший</h2>
+                        <p class="actor-role">Роль: Тони Старк / Железный человек</p>
+                        <p class="actor-details"><strong>Дата рождения:</strong> 4 апреля 1965 года</p>
+                        <div class="actor-bio">
+                            Американский актёр, продюсер и музыкант. Обладатель премий «Оскар» (2024), «Золотой глобус» (2001, 2010, 2024), BAFTA (1993, 2024), Гильдии киноактёров США (2001, 2024), «Сатурн» (1994, 2009, 2014, 2019) и Выбор критиков (2024).
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="actor clearfix">
-            <img src="images/hovard.jpg" alt="Терренс Ховард" width="200">
-            <div class="actor-info">
-                <h2>Терренс Ховард</h2>
-                <p><strong>Роль:</strong> Джеймс «Роуди» Роудс</p>
-                <p><strong>Дата рождения:</strong> 11 марта 1969 года</p>
-                <p>Американский актёр и певец. Ховард начал свою карьеру в 1990-х на телевидении, прежде чем получить известность благодаря роли в романтической комедии «Шафер» (1999).
-               </p>
+            <div class="actor-card">
+                <div class="actor-content">
+                    <div class="actor-photo">
+                        <img src="images/hovard.jpg" alt="Терренс Ховард">
+                    </div>
+                    <div class="actor-info">
+                        <h2>Терренс Ховард</h2>
+                        <p class="actor-role">Роль: Джеймс «Роуди» Роудс</p>
+                        <p class="actor-details"><strong>Дата рождения:</strong> 11 марта 1969 года</p>
+                        <div class="actor-bio">
+                            Американский актёр и певец. Ховард начал свою карьеру в 1990-х на телевидении, прежде чем получить известность благодаря роли в романтической комедии «Шафер» (1999).
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="actor clearfix">
-            <img src="images/def.jpg" alt="Джефф Бриджес" width="200">
-            <div class="actor-info">
-                <h2>Джефф Бриджес</h2>
-                <p><strong>Роль:</strong> Обадайя Стейн</p>
-                <p><strong>Дата рождения:</strong> 4 декабря 1949 года</p>
-                <p>Американский актёр кино, телевидения и озвучивания, кинопродюсер. Лауреат премий «Оскар» и «Золотой глобус» за лучшую мужскую роль в фильме «Сумасшедшее сердце».</p>
+            <div class="actor-card">
+                <div class="actor-content">
+                    <div class="actor-photo">
+                        <img src="images/def.jpg" alt="Джефф Бриджес">
+                    </div>
+                    <div class="actor-info">
+                        <h2>Джефф Бриджес</h2>
+                        <p class="actor-role">Роль: Обадайя Стейн</p>
+                        <p class="actor-details"><strong>Дата рождения:</strong> 4 декабря 1949 года</p>
+                        <div class="actor-bio">
+                            Американский актёр кино, телевидения и озвучивания, кинопродюсер. Лауреат премий «Оскар» и «Золотой глобус» за лучшую мужскую роль в фильме «Сумасшедшее сердце».
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="actor clearfix">
-            <img src="images/gvinet.jpg" alt="Гвинет Пэлтроу" width="200">
-            <div class="actor-info">
-                <h2>Гвинет Пэлтроу</h2>
-                <p><strong>Роль:</strong> Вирджиния «Пеппер» Поттс</p>
-                <p><strong>Дата рождения:</strong> 27 сентября 1972 года</p>
-                <p>Американская актриса кино и телевидения, предпринимательница, певица и писательница. Исполнила роль Пеппер Поттс в серии фильмов кинематографической вселенной Marvel: «Железный человек», «Железный человек 2», «Мстители», «Железный человек 3», «Человек-паук: Возвращение домой», «Мстители: Война бесконечности» и «Мстители: Финал». Обладательница премий «Оскар», «Золотой глобус» и «Эмми».</p>
+            <div class="actor-card">
+                <div class="actor-content">
+                    <div class="actor-photo">
+                        <img src="images/gvinet.jpg" alt="Гвинет Пэлтроу">
+                    </div>
+                    <div class="actor-info">
+                        <h2>Гвинет Пэлтроу</h2>
+                        <p class="actor-role">Роль: Вирджиния «Пеппер» Поттс</p>
+                        <p class="actor-details"><strong>Дата рождения:</strong> 27 сентября 1972 года</p>
+                        <div class="actor-bio">
+                            Американская актриса кино и телевидения, предпринимательница, певица и писательница. Исполнила роль Пеппер Поттс в серии фильмов кинематографической вселенной Marvel. Обладательница премий «Оскар», «Золотой глобус» и «Эмми».
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -101,6 +169,5 @@
     <footer>
         <p>© 2025 Фанатский сайт о "Железный человек". Все права на фильм принадлежат Marvel Studios.</p>
     </footer>
-
 </body>
 </html>

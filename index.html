@@ -3,14 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Железный человек - Главная</title>
-    
-    <!-- Подключение таблицы стилей -->
     <link rel="stylesheet" href="style.css">
-    
+    <style>
+        .content-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .movie-poster {
+            flex-shrink: 0;
+        }
+        
+        .movie-poster img {
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+        
+        .movie-info {
+            flex: 1;
+        }
+        
+        .movie-info h2 {
+            color: var(--marvel-gold);
+            margin-top: 0;
+        }
+        
+        .highlight {
+            color: var(--accent-red);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-
-        <header>
+    <header>
         <nav>
             <ul class="menu">
                 <li><a href="index.html">Главная</a></li>
@@ -21,16 +55,30 @@
         </nav>
     </header>
 
-        <main>
-        <h1>Железный человек</h1>
-        <p>Добро пожаловать на фанатский сайт, посвященный культовой трилогии! Здесь вы найдете информацию о фильме, его создателях и интересные материалы.</p>
-        <img src="images/poster.jpg" align="center" alt="Постер фильма Железный человек" width="500">
+    <main>
+        <div class="content-card">
+            <h1 style="text-align: center;">Железный человек</h1>
+            <p>Добро пожаловать на фанатский сайт, посвященный культовой трилогии! Здесь вы найдете информацию о фильме, его создателях и интересные материалы.</p>
+            
+            <div class="content-wrapper">
+                <div class="movie-poster">
+                    <img src="images/poster.jpg" alt="Постер фильма Железный человек" width="500">
+                </div>
+                <div class="movie-info">
+                    <h2>О фильме</h2>
+                    <p><strong>Год выпуска:</strong> 2008</p>
+                    <p><strong>Режиссер:</strong> Джон Фавро</p>
+                    <p><strong>Жанр:</strong> Фантастика, боевик, приключения</p>
+                    <p><strong>Сюжет:</strong> Миллиардер и гениальный изобретатель Тони Старк попадает в плен к террористам, где создает уникальную броню, чтобы выжить. Вернувшись домой, он совершенствует свою технологию и становится супергероем Железным человеком.</p>
+                    <p><strong>В главных ролях:</strong> Роберт Дауни-младший, Гвинет Пэлтроу, Терренс Ховард, Джефф Бриджес</p>
+                    <p class="highlight">Фильм положил начало кинематографической вселенной Marvel и стал одним из самых успешных проектов студии.</p>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <!-- Подвал - ОДИНАКОВЫЙ НА ВСЕХ СТРАНИЦАХ -->
     <footer>
         <p>© 2025 Фанатский сайт о "Железный человек". Все права на фильм принадлежат Marvel Studios.</p>
     </footer>
-
 </body>
 </html>

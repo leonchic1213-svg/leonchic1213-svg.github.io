@@ -1,57 +1,97 @@
 /* style.css */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #6c6874;
-    color: #333;
+:root {
+    --marvel-red: #e62429;
+    --marvel-gold: #f0e6d2;
+    --dark-bg: #1a1a1a;
+    --light-text: #000000;
+    --card-bg: #2c3e50;
+    --card-border: #34495e;
+    --accent-red: #e74c3c;
 }
 
-/* Стили для шапки и меню */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: var(--light-text);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
 header {
-    background: #333;
-    color: #fcf9f5;
+    background: var(--marvel-red);
     padding: 1rem 0;
-    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
     list-style: none;
+    margin: 0;
     padding: 0;
 }
 
-.menu li {
-    display: inline;
-    margin-right: 20px;
-}
-
 .menu a {
-    color: #fcf9f5;
+    color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 .menu a:hover {
-    color: #ace7f2; /* Цвет меняется при наведении */
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
 }
 
-/* Стили для основного содержимого */
+/* Основной контент */
 main {
-    width: 75%;
+    width: 80%;
     margin: 20px auto;
-    padding: 20px;
+    padding: 30px;
     background: #fcf9f5;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    border-radius: 10px;
 }
 
-/* Стили для подвала */
+/* Карточки контента */
+.content-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    border: 2px solid var(--card-border);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    color: #ecf0f1;
+}
+
+.content-card h1,
+.content-card h2 {
+    color: var(--marvel-gold);
+}
+
+/* Подвал */
 footer {
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     background: #333;
     color: #fcf9f5;
-    position: relative;
-    bottom: 0;
     width: 100%;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    main {
+        width: 95%;
+        padding: 20px;
+    }
 }
